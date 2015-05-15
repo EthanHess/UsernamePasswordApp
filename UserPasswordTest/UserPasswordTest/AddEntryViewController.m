@@ -18,6 +18,7 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor grayColor];
+    self.navigationController.navigationBarHidden = YES;
     
     [self setUpViews];
     
@@ -39,6 +40,7 @@
     self.textView.delegate = self;
     self.textView.backgroundColor = [UIColor whiteColor];
     self.textView.font = [UIFont fontWithName:@"Chalkduster" size:16];
+    [self.view addSubview:self.textView];
     
     
 }
@@ -58,6 +60,13 @@
     
     return YES;
     
+}
+
+-(BOOL)textViewShouldEndEditing:(UITextView *)textView {
+    
+    [textView resignFirstResponder];
+    
+    return YES;
 }
 
 /*
