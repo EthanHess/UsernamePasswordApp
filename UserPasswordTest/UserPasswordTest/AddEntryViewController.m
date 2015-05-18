@@ -7,8 +7,12 @@
 //
 
 #import "AddEntryViewController.h"
+#import "EntryListViewController.h"
+#import "EntryController.h"
 
 @interface AddEntryViewController ()
+
+@property (nonatomic, strong) NSDate *timestamp;
 
 @end
 
@@ -42,6 +46,8 @@
     self.textView.font = [UIFont fontWithName:@"Chalkduster" size:16];
     [self.view addSubview:self.textView];
     
+    self.timestamp = [NSDate date];
+    
     
 }
      
@@ -50,7 +56,42 @@
     self.toolBar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 75)];
     self.toolBar.backgroundColor = [UIColor redColor];
     [self.view addSubview:self.toolBar];
+    
+    NSMutableArray *navItems = [[NSMutableArray alloc] initWithCapacity:3];
+    
+    UIImage *save = [UIImage imageNamed:@"save"];
+    UIImage *arrow = [UIImage imageNamed:@"leftArrow"];
+    
+    UIBarButtonItem *flexItem0 = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    [navItems addObject:flexItem0];
+    
+    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc]initWithImage:save style:UIBarButtonItemStylePlain target:self action:@selector(saveEntry)];
+    [navItems addObject:saveButton];
+    
+    UIBarButtonItem *flexItem1 = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    [navItems addObject:flexItem1];
+    
+    UIBarButtonItem *arrowButton = [[UIBarButtonItem alloc]initWithImage:arrow style:UIBarButtonItemStylePlain target:self action:@selector(entryList)];
+    [navItems addObject:arrowButton];
+                                    
+    UIBarButtonItem *flexItem2 = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    [navItems addObject:flexItem2];
+    
+    [self.toolBar setItems:navItems];
          
+}
+
+- (void)saveEntry {
+    
+    [[EntryController sharedInstance]addEntryWithTitle:self.textField.text text:self.textView.text andDate:self.timestamp];
+    
+}
+
+- (void)entryList {
+    
+    EntryListViewController *entryList = [EntryListViewController new];
+    [self.navigationController pushViewController:entryList animated:YES];
+    
 }
 
 

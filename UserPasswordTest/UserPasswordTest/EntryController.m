@@ -23,6 +23,12 @@
 }
 
 
+- (void)addEntryWithTitle:(NSString *)title text:(NSString *)text andDate:(NSDate *)date {
+    
+    
+    
+}
+
 
 - (void)synchronize {
     

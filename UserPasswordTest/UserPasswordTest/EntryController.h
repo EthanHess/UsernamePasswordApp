@@ -14,4 +14,6 @@
 
 + (EntryController *)sharedInstance;
 
+- (void)addEntryWithTitle:(NSString *)title text:(NSString *)text andDate:(NSDate *)date;
+
 @end
