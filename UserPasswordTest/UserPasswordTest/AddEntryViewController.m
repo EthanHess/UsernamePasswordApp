@@ -18,6 +18,15 @@
 
 @implementation AddEntryViewController
 
+- (void)updateWithEntry:(Entry *)entry {
+    
+    self.entry = entry;
+    
+    self.textField.text = entry.title;
+    self.textView.text = entry.text;
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -27,6 +36,8 @@
     [self setUpViews];
     
     [self setUpToolBar];
+    
+    [self updateWithEntry:self.entry]; 
 }
 
 

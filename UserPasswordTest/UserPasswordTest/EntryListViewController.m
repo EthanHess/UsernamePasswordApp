@@ -99,7 +99,21 @@
     
     AddEntryViewController *addEntryVC = [AddEntryViewController new];
     
+    addEntryVC.entry = [EntryController sharedInstance].entries[indexPath.row];
+    
     [self.navigationController pushViewController:addEntryVC animated:YES];
+    
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        
+        [[EntryController sharedInstance]removeEntry:[EntryController sharedInstance].entries[indexPath.row]];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationMiddle];
+        
+        [tableView reloadData]; 
+    }
     
 }
 
