@@ -34,7 +34,7 @@
 
 - (void)addEntryWithTitle:(NSString *)title text:(NSString *)text andDate:(NSDate *)date {
     
-    Entry *entry = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:[Stack sharedInstance].managedObjectContext];
+    Entry *entry = [NSEntityDescription insertNewObjectForEntityForName:@"Entry" inManagedObjectContext:[Stack sharedInstance].managedObjectContext];
     
     entry.title = title;
     entry.text = text;

@@ -8,6 +8,9 @@
 
 #import "EntryListViewController.h"
 #import "AddEntryViewController.h"
+#import "EntryController.h"
+#import "Entry.h"
+
 
 @interface EntryListViewController ()
 
@@ -75,13 +78,18 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 3;
+    return [EntryController sharedInstance].entries.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
+    
+    Entry *entry = [EntryController sharedInstance].entries[indexPath.row];
+    
+    cell.textLabel.text = entry.title;
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", entry.date];
     
     return cell;
 }

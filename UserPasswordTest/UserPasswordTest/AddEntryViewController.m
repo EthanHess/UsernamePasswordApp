@@ -94,6 +94,14 @@
     
     [[EntryController sharedInstance]addEntryWithTitle:self.textField.text text:self.textView.text andDate:self.timestamp];
     
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Entry Saved!" message:nil preferredStyle:UIAlertControllerStyleAlert];
+    
+    [alert addAction:[UIAlertAction actionWithTitle:@"Okay!" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+    
+        
+    }]];
+     
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 - (void)entryList {
