@@ -46,6 +46,15 @@
     self.textView.font = [UIFont fontWithName:@"Chalkduster" size:16];
     [self.view addSubview:self.textView];
     
+    
+    self.clearButton = [[UIButton alloc]initWithFrame:CGRectMake((self.view.frame.size.width / 2) - 50, 480, 100, 100)];
+    float cornderRadius = self.clearButton.frame.size.height / 2;
+    self.clearButton.layer.cornerRadius = cornderRadius;
+    [self.clearButton setTitle:@"Clear" forState:UIControlStateNormal];
+    [self.clearButton setBackgroundColor:[UIColor redColor]];
+    [self.clearButton addTarget:self action:@selector(clearAll) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.clearButton];
+    
     self.timestamp = [NSDate date];
     
     
@@ -65,14 +74,14 @@
     UIBarButtonItem *flexItem0 = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
     [navItems addObject:flexItem0];
     
-    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc]initWithImage:save style:UIBarButtonItemStylePlain target:self action:@selector(saveEntry)];
-    [navItems addObject:saveButton];
+    UIBarButtonItem *arrowButton = [[UIBarButtonItem alloc]initWithImage:arrow style:UIBarButtonItemStylePlain target:self action:@selector(entryList)];
+    [navItems addObject:arrowButton];
     
     UIBarButtonItem *flexItem1 = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
     [navItems addObject:flexItem1];
     
-    UIBarButtonItem *arrowButton = [[UIBarButtonItem alloc]initWithImage:arrow style:UIBarButtonItemStylePlain target:self action:@selector(entryList)];
-    [navItems addObject:arrowButton];
+    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc]initWithImage:save style:UIBarButtonItemStylePlain target:self action:@selector(saveEntry)];
+    [navItems addObject:saveButton];
                                     
     UIBarButtonItem *flexItem2 = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
     [navItems addObject:flexItem2];
@@ -92,6 +101,12 @@
     EntryListViewController *entryList = [EntryListViewController new];
     [self.navigationController pushViewController:entryList animated:YES];
     
+}
+
+- (void)clearAll {
+    
+    self.textField.text = @"";
+    self.textView.text = @"";
 }
 
 

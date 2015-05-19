@@ -10,6 +10,7 @@
 		270E51771B068518001CDF3C /* EntryListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 270E51761B068518001CDF3C /* EntryListViewController.m */; };
 		270E517A1B068991001CDF3C /* AddEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 270E51791B068991001CDF3C /* AddEntryViewController.m */; };
 		270E517D1B068B8D001CDF3C /* EntryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 270E517C1B068B8D001CDF3C /* EntryController.m */; };
+		27786B9D1B0AB38900FFDE9C /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = 27786B9C1B0AB38900FFDE9C /* Entry.m */; };
 		27D425321B005BA40099F224 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D425311B005BA40099F224 /* main.m */; };
 		27D425351B005BA40099F224 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D425341B005BA40099F224 /* AppDelegate.m */; };
 		27D425381B005BA40099F224 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D425371B005BA40099F224 /* ViewController.m */; };
@@ -41,6 +42,8 @@
 		270E51791B068991001CDF3C /* AddEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddEntryViewController.m; sourceTree = "<group>"; };
 		270E517B1B068B8D001CDF3C /* EntryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntryController.h; sourceTree = "<group>"; };
 		270E517C1B068B8D001CDF3C /* EntryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntryController.m; sourceTree = "<group>"; };
+		27786B9B1B0AB38900FFDE9C /* Entry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Entry.h; path = ../Entry.h; sourceTree = "<group>"; };
+		27786B9C1B0AB38900FFDE9C /* Entry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Entry.m; path = ../Entry.m; sourceTree = "<group>"; };
 		27D4252C1B005BA40099F224 /* UserPasswordTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UserPasswordTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27D425301B005BA40099F224 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27D425311B005BA40099F224 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -130,6 +133,8 @@
 				270E51791B068991001CDF3C /* AddEntryViewController.m */,
 				270E517B1B068B8D001CDF3C /* EntryController.h */,
 				270E517C1B068B8D001CDF3C /* EntryController.m */,
+				27786B9B1B0AB38900FFDE9C /* Entry.h */,
+				27786B9C1B0AB38900FFDE9C /* Entry.m */,
 				27D426BF1B03B6DA0099F224 /* Model.xcdatamodeld */,
 				27D425391B005BA40099F224 /* Main.storyboard */,
 				27D4253C1B005BA40099F224 /* Images.xcassets */,
@@ -265,6 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27786B9D1B0AB38900FFDE9C /* Entry.m in Sources */,
 				27D426CA1B03B91E0099F224 /* Stack.m in Sources */,
 				270E517D1B068B8D001CDF3C /* EntryController.m in Sources */,
 				270E51771B068518001CDF3C /* EntryListViewController.m in Sources */,

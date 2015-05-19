@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Entry.h"
 
 @interface EntryController : NSObject
 
@@ -15,5 +16,7 @@
 + (EntryController *)sharedInstance;
 
 - (void)addEntryWithTitle:(NSString *)title text:(NSString *)text andDate:(NSDate *)date;
+
+- (void)removeEntry:(Entry *)entry;
 
 @end

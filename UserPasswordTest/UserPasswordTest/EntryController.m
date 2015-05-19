@@ -22,13 +22,35 @@
     
 }
 
-
-- (void)addEntryWithTitle:(NSString *)title text:(NSString *)text andDate:(NSDate *)date {
+- (NSArray *)entries {
     
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Entry"];
     
+    NSArray *objects = [[Stack sharedInstance].managedObjectContext executeFetchRequest:fetchRequest error:nil];
+    
+    return objects;
     
 }
 
+- (void)addEntryWithTitle:(NSString *)title text:(NSString *)text andDate:(NSDate *)date {
+    
+    Entry *entry = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:[Stack sharedInstance].managedObjectContext];
+    
+    entry.title = title;
+    entry.text = text;
+    entry.date = date;
+    
+    [self synchronize];
+    
+}
+
+- (void)removeEntry:(Entry *)entry {
+    
+    [entry.managedObjectContext deleteObject:entry]; 
+    
+    [self synchronize];
+    
+}
 
 - (void)synchronize {
     

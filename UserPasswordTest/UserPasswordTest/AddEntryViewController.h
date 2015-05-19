@@ -12,6 +12,7 @@
 
 @property (nonatomic, strong) UITextField *textField;
 @property (nonatomic, strong) UITextView *textView;
-@property (nonatomic, strong) UIToolbar *toolBar; 
+@property (nonatomic, strong) UIToolbar *toolBar;
+@property (nonatomic, strong) UIButton *clearButton; 
 
 @end
